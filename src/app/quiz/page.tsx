@@ -1,12 +1,11 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { useRouter } from "next/navigation";
 
 import QuizApp from "../QuizApp";
 import { useSearchParams } from "next/navigation";
 
-export default function QuizPage() {
-
+function QuizContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const type = searchParams.get("type") === "css" ? "css" : "html";
@@ -70,5 +69,17 @@ export default function QuizPage() {
         </div>
       </div>
     </>
+  );
+}
+
+export default function QuizPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-[#18122B]">
+        <div className="text-[#B8B4E9] text-xl">Loading quiz...</div>
+      </div>
+    }>
+      <QuizContent />
+    </Suspense>
   );
 }
