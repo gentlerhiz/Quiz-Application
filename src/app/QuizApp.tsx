@@ -2,8 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { htmlQuestions } from "./htmlQuestions";
 import { cssQuestions } from "./cssQuestions";
+import { jsQuestions } from "./jsQuestions";
 
-type QuizType = "html" | "css";
+type QuizType = "html" | "css" | "js";
 interface QuizAppProps {
   type?: QuizType;
 }
@@ -15,7 +16,7 @@ function shuffleArray<T>(array: T[]): T[] {
     .map(({ value }) => value);
 }
 export default function QuizApp({ type = "html" }: QuizAppProps) {
-  const questionPool = type === "css" ? cssQuestions : htmlQuestions;
+  const questionPool = type === "css" ? cssQuestions : type === "js" ? jsQuestions : htmlQuestions;
   const [questions, setQuestions] = useState(() => shuffleArray(questionPool).slice(0, 20));
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);

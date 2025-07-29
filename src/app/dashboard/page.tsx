@@ -26,6 +26,9 @@ export default function DashboardPage() {
   const handleStartCssQuiz = () => {
     router.push("/quiz?type=css");
   };
+  const handleStartJsQuiz = () => {
+    router.push("/quiz?type=js");
+  };
 
   return (
     <div className="min-h-screen bg-[#18122B] px-4 py-8 relative overflow-hidden">
@@ -80,31 +83,66 @@ export default function DashboardPage() {
           <h1 className="text-4xl font-extrabold text-[#B8B4E9] mb-2 text-center tracking-tight">Welcome, <span className="text-[#FFD600]">{username}</span>!</h1>
           <p className="text-lg text-[#CFCBFF] text-center max-w-xl mb-2 font-medium">Ready to shine? Start a new quiz, track your progress, and master HTML with Practicode Academy.</p>
         </div>
-        <div className="w-full max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 mt-2 font-sans">
+        <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-2 font-sans px-4">
           {/* HTML Quiz Card */}
-          <div className="rounded-3xl bg-[#231942] border-2 border-[#635BFF] p-10 flex flex-col items-center shadow-xl gap-7 font-sans">
-            <div className="flex flex-col items-center gap-3 mb-2 text-center w-full">
-              <span className="text-6xl mx-auto">🎯</span>
-              <span className="text-[#FFD600] font-extrabold text-2xl tracking-wide w-full block">20 new HTML questions</span>
+          <div className="rounded-3xl bg-[#231942] border-2 border-[#635BFF] p-6 sm:p-8 lg:p-10 flex flex-col items-center shadow-xl gap-4 sm:gap-6 lg:gap-7 font-sans min-h-[280px] sm:min-h-[320px]">
+            <div className="flex flex-col items-center gap-2 sm:gap-3 mb-2 text-center w-full">
+              {/* HTML5 Logo */}
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16">
+                <rect width="64" height="64" rx="8" fill="#E34F26"/>
+                <path d="M12 8L15.2 52L32 56L48.8 52L52 8H12Z" fill="#E34F26"/>
+                <path d="M32 11V53L45.2 50L47.6 11H32Z" fill="#EF652A"/>
+                <path d="M32 23H42L42.4 18H32V13H47.5L47.2 15.5L45.5 32H32V27H40.5L40.2 23H32Z" fill="#EBEBEB"/>
+                <path d="M32 41.5V46.5L37.5 45L38 41.5H32Z" fill="#EBEBEB"/>
+                <path d="M32 32V27H22.5L23 32H32ZM32 46.5V41.5H26L26.5 45L32 46.5Z" fill="#FFF"/>
+              </svg>
+              <span className="text-[#FFD600] font-extrabold text-lg sm:text-xl lg:text-2xl tracking-wide w-full block leading-tight">Master HTML Fundamentals</span>
             </div>
             <button
               onClick={handleStartHtmlQuiz}
-              className="bg-[#635BFF] text-white font-extrabold py-3 px-8 w-full rounded-full shadow hover:bg-[#A084E8] transition text-lg tracking-wide border-2 border-[#635BFF]"
+              className="bg-[#635BFF] text-white font-extrabold py-2 sm:py-3 px-6 sm:px-8 w-full rounded-full shadow hover:bg-[#A084E8] transition text-base sm:text-lg tracking-wide border-2 border-[#635BFF] min-h-[48px]"
             >
               Start HTML Quiz
             </button>
           </div>
           {/* CSS Quiz Card */}
-          <div className="rounded-3xl bg-[#231942] border-2 border-[#635BFF] p-10 flex flex-col items-center shadow-xl gap-7 font-sans">
-            <div className="flex flex-col items-center gap-3 mb-2 text-center w-full">
-              <span className="text-6xl mx-auto">🎨</span>
-              <span className="text-[#FFD600] font-extrabold text-2xl tracking-wide w-full block">20 new CSS questions</span>
+          <div className="rounded-3xl bg-[#231942] border-2 border-[#635BFF] p-6 sm:p-8 lg:p-10 flex flex-col items-center shadow-xl gap-4 sm:gap-6 lg:gap-7 font-sans min-h-[280px] sm:min-h-[320px]">
+            <div className="flex flex-col items-center gap-2 sm:gap-3 mb-2 text-center w-full">
+              {/* CSS3 Logo */}
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16">
+                <rect width="64" height="64" rx="8" fill="#1572B6"/>
+                <path d="M12 8L15.2 52L32 56L48.8 52L52 8H12Z" fill="#1572B6"/>
+                <path d="M32 11V53L45.2 50L47.6 11H32Z" fill="#33A9DC"/>
+                <path d="M32 23H42L42.4 18H32V13H47.5L47.2 15.5L45.5 32H32V27H40.5L40.2 23H32Z" fill="#EBEBEB"/>
+                <path d="M32 41.5V46.5L37.5 45L38 41.5H32Z" fill="#EBEBEB"/>
+                <path d="M32 32V27H22.5L23 32H32ZM32 46.5V41.5H26L26.5 45L32 46.5Z" fill="#FFF"/>
+              </svg>
+              <span className="text-[#FFD600] font-extrabold text-lg sm:text-xl lg:text-2xl tracking-wide w-full block leading-tight">Style with CSS</span>
             </div>
             <button
               onClick={handleStartCssQuiz}
-              className="bg-[#635BFF] text-white font-extrabold py-3 px-8 w-full rounded-full shadow hover:bg-[#A084E8] transition text-lg tracking-wide border-2 border-[#635BFF]"
+              className="bg-[#635BFF] text-white font-extrabold py-2 sm:py-3 px-6 sm:px-8 w-full rounded-full shadow hover:bg-[#A084E8] transition text-base sm:text-lg tracking-wide border-2 border-[#635BFF] min-h-[48px]"
             >
               Start CSS Quiz
+            </button>
+          </div>
+          {/* JavaScript Quiz Card */}
+          <div className="rounded-3xl bg-[#231942] border-2 border-[#635BFF] p-6 sm:p-8 lg:p-10 flex flex-col items-center shadow-xl gap-4 sm:gap-6 lg:gap-7 font-sans min-h-[280px] sm:min-h-[320px] sm:col-span-2 lg:col-span-1">
+            <div className="flex flex-col items-center gap-2 sm:gap-3 mb-2 text-center w-full">
+              {/* JavaScript Logo */}
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16">
+                <rect width="64" height="64" rx="8" fill="#F7DF1E"/>
+                <path d="M32 8C40.8366 8 48 15.1634 48 24V40C48 48.8366 40.8366 56 32 56C23.1634 56 16 48.8366 16 40V24C16 15.1634 23.1634 8 32 8Z" fill="#F7DF1E"/>
+                <path d="M36.5 42C37.5 43.5 39 44.5 41.5 44.5C43.5 44.5 44.5 43.5 44.5 42C44.5 40 43 39.5 41 38.5C38.5 37.5 36.5 36 36.5 33C36.5 30.5 38.5 28.5 41.5 28.5C44 28.5 45.5 29.5 46.5 31.5L44 33C43.5 32 42.5 31.5 41.5 31.5C40.5 31.5 40 32 40 33C40 34.5 41 35 43 36C46 37 48.5 38.5 48.5 42C48.5 45.5 45.5 47.5 41.5 47.5C37.5 47.5 35 45.5 34 43L36.5 42Z" fill="#323330"/>
+                <path d="M24 43.5C24.5 44.5 25.5 45 26.5 45C28 45 28.5 44 28.5 42.5V28.5H32V42.5C32 46.5 29.5 48 26.5 48C23.5 48 21.5 46.5 20.5 44.5L24 43.5Z" fill="#323330"/>
+              </svg>
+              <span className="text-[#FFD600] font-extrabold text-lg sm:text-xl lg:text-2xl tracking-wide w-full block leading-tight">Code with JavaScript</span>
+            </div>
+            <button
+              onClick={handleStartJsQuiz}
+              className="bg-[#635BFF] text-white font-extrabold py-2 sm:py-3 px-6 sm:px-8 w-full rounded-full shadow hover:bg-[#A084E8] transition text-base sm:text-lg tracking-wide border-2 border-[#635BFF] min-h-[48px]"
+            >
+              Start JavaScript Quiz
             </button>
           </div>
         </div>

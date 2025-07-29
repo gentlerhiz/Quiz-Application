@@ -8,7 +8,7 @@ import { useSearchParams } from "next/navigation";
 function QuizContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const type = searchParams.get("type") === "css" ? "css" : "html";
+  const type = searchParams.get("type") === "css" ? "css" : searchParams.get("type") === "js" ? "js" : "html";
   useEffect(() => {
     const user = localStorage.getItem("studentUser");
     if (!user) {
@@ -57,10 +57,10 @@ function QuizContent() {
               <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#fff" fillOpacity="0.1"/><path d="M8 12h8M12 8v8" stroke="#fff" strokeWidth="2" strokeLinecap="round"/></svg>
             </div>
             <h1 className="text-4xl font-extrabold text-[#B8B4E9] mb-2 text-center tracking-tight">
-              Practicode {type === "css" ? "CSS" : "HTML"} Quiz
+              Practicode {type === "css" ? "CSS" : type === "js" ? "JavaScript" : "HTML"} Quiz
             </h1>
             <p className="text-lg text-[#CFCBFF] text-center max-w-xl mb-2 font-medium">
-              Answer 20 random {type === "css" ? "CSS" : "HTML"} questions. Good luck!
+              Answer 20 random {type === "css" ? "CSS" : type === "js" ? "JavaScript" : "HTML"} questions. Good luck!
             </p>
           </div>
           <div className="w-full max-w-xl">
