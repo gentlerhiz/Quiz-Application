@@ -1,6 +1,6 @@
 
 export const cssQuestions = [
-  { question: "What does CSS stand for?", options: ["Creative Style Sheets", "Cascading Style Sheets", "Computer Style Sheets", "Colorful Style Sheets"], answer: 1 },
+  { question: "CSS stand for?", options: ["Creative Style Sheets", "Cascading Style Sheets", "Computer Style Sheets", "Colorful Style Sheets"], answer: 1 },
   { question: "Which HTML attribute is used to define inline styles?", options: ["class", "font", "styles", "style"], answer: 3 },
   { question: "Which CSS property controls the text size?", options: ["font-style", "text-size", "font-size", "text-style"], answer: 2 },
   { question: "How do you insert a comment in a CSS file?", options: ["// this is a comment //", "/* this is a comment */", "' this is a comment", "<!-- this is a comment -->"], answer: 1 },
