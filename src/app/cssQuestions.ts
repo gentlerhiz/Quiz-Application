@@ -423,6 +423,5 @@ export const cssQuestions = [
   { question: "Which property specifies direction?", options: ["direction", "text-direction", "writing-direction", "flow-direction"], answer: 0 },
   { question: "Which property specifies display?", options: ["display", "layout", "render", "show"], answer: 0 },
   { question: "Which property specifies empty cells?", options: ["empty-cells", "border-empty", "cell-border", "hide-empty"], answer: 0 },
-  { question: "Which property specifies filter?", options: ["filter", "effect", "image-filter", "visual-effect"], answer: 0 },
   { question: "Which property specifies flex?", options: ["flex", "flexible", "flex-layout", "flex-box"], answer: 0 },
 ];
